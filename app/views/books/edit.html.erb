@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CARAVAN</title>
+  </head>
+  <body>
+    <h1>Editing Book</h1>
+    <!--asの使い方が分からない-->
+  <%= form_with model: @list do |f| %>
+    <h4>title</h4>
+    <%= f.text_field :title %>
+    <h4>body</h4>
+    <%= f.text_area :body %>
+    <%= f.submit "Update" %>
+    <% end %>
+    <%= link_to "show", "/books/#{@list.id}" %>
+    <%= link_to "back", "/books/index"  %>
+  </body>
+</html>

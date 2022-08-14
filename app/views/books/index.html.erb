@@ -27,7 +27,7 @@
   <td><%= list.body %></td>
    <!-- asのお使い方がわからない-->
   <td><%= link_to "show", "/books/#{list.id}" %></td>
-  <td><a class="edit_91789" href="/books/:id/edit">Edit</a></td>
+  <td><%= link_to "edit", "/books/#{list.id}/edit" %></td>
   <td><a data-confirm="Are you sure?" class="destroy_91789" rel="nofollow" data-method="delete" href="/books/91789">Destroy</a></td>
  </tr>
 <% end %>
