@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CARAVAN</title>
+  </head>
+  <body>
+    <h2>title</h2>
+    <%= @list.title %>
+    <h2>body</h2>
+    <%= @list.body %>
+    <%= link_to "edit", "/books/#{@list.id}/edit" %>
+    <%= link_to "back", "/books/index" %>
+  </body>
+</html>

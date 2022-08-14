@@ -9,13 +9,14 @@ class BooksController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to "/"
+    # asのお使い方がわからない
+    redirect_to "/books/#{list.id}"
   end
   def show
-    # list = List.find(params[:id])
+    @list = List.find(params[:id])
   end
   def edit
-    list = list.find(params[:id])
+    # @list = List.find(params[:id])
   end
   def update
     
