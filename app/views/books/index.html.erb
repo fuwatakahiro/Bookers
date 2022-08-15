@@ -28,7 +28,7 @@
    <!-- asのお使い方がわからない-->
   <td><%= link_to "show", "/books/#{list.id}" %></td>
   <td><%= link_to "edit", "/books/#{list.id}/edit" %></td>
-  <td><a data-confirm="Are you sure?" class="destroy_91789" rel="nofollow" data-method="delete" href="/books/91789">Destroy</a></td>
+  <td><%= link_to "destroy", "/books/#{list.id}", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
  </tr>
 <% end %>
 </tbody>

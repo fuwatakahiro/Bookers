@@ -24,7 +24,9 @@ class BooksController < ApplicationController
     redirect_to "/books/#{list.id}" 
   end
   def destroy
-    
+    list = List.find(params[:id])
+    list.destroy
+    redirect_to "/books/index"
   end
    private
   def list_params 

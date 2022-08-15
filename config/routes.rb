@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get "books/:id" => "books#show", as: 'list'
   get "books/:id/edit" => "books#edit"
   post "books" => "books#create"
-  patch 'books/:id' => 'lists#update'
-# , as: 'update_list'
+  patch 'books/:id' => 'lists#update', as: 'update_book'
+  delete "books/:id" => "books#destroy", as: "destroy_book"
 end
