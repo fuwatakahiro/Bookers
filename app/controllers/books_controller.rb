@@ -21,7 +21,7 @@ class BooksController < ApplicationController
   def update
     list = List.find(params[:id])
     list.update(list_params)
-    redirect_to "/books/#{list.id}" 
+    redirect_to "/books/#{list.id}"
   end
   def destroy
     list = List.find(params[:id])

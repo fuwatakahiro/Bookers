@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get "/" => "homes#top"
   get "books/index" => "books#index"
    # asのお使い方がわからない
-  get "books/:id" => "books#show", as: 'list'
+  get "books/:id" => "books#show", as: 'book'
   get "books/:id/edit" => "books#edit"
   post "books" => "books#create"
-  patch 'books/:id' => 'lists#update', as: 'update_book'
+  patch 'books/:id' => 'books#update', as: 'update_book'
   delete "books/:id" => "books#destroy", as: "destroy_book"
 end

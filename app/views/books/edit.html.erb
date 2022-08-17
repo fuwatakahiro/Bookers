@@ -8,15 +8,16 @@
   </head>
   <body>
     <h1>Editing Book</h1>
+    
     <!--asの使い方が分からない（バージョンが違うから？）-->
-  <%= form_with model: @list, url: "books/#{list.id}", method: :patch do |f| %>
+  <%= form_with model: @list, url: update_book_path(@list), method: :patch do |f| %>
     <h4>title</h4>
     <%= f.text_field :title %>
     <h4>body</h4>
     <%= f.text_area :body %>
-    <%= f.submit "Update" %>
+    <%= f.submit 'Update Book' %>
     <% end %>
-    <%= link_to "show", "/books/#{@list.id}" %>
-    <%= link_to "back", "/books/index"  %>
+    <%= link_to "show", book_path(@list) %>
+    <%= link_to "back", '/books/index'  %>
   </body>
 </html>
