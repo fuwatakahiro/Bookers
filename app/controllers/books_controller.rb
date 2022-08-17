@@ -9,8 +9,10 @@ class BooksController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    # asのお使い方がわからない
-    redirect_to "/books/#{list.id}"
+    if list.save
+      flash[:success] = "Book was successfully created."
+      redirect_to book_path(list.id)
+    end
   end
   def show
     @list = List.find(params[:id])
@@ -21,7 +23,11 @@ class BooksController < ApplicationController
   def update
     list = List.find(params[:id])
     list.update(list_params)
-    redirect_to "/books/#{list.id}"
+    # 直し
+    if list.update(list_params)
+      flash[:update] = "Book was successfully updated."
+      redirect_to book_path(list.id)
+    end
   end
   def destroy
     list = List.find(params[:id])

@@ -8,8 +8,6 @@
   </head>
   <body>
     <h1>Editing Book</h1>
-    
-    <!--asの使い方が分からない（バージョンが違うから？）-->
   <%= form_with model: @list, url: update_book_path(@list), method: :patch do |f| %>
     <h4>title</h4>
     <%= f.text_field :title %>
