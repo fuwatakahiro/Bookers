@@ -21,13 +21,13 @@
     </tr>
   </thead>
 <tbody>
-   
+
   <% @lists.each do |list| %>
     <tr>
      <td><%= list.title %></td>
      <td><%= list.body %></td>
      <td><%= link_to "show", book_path(list.id) %></td>
-     <td><%= link_to "edit", "/books/#{list.id}/edit" %></td>
+     <td><%= link_to "edit", edit_book_path(list.id) %></td>
      <td><%= link_to "destroy", destroy_book_path(list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
     </tr>
   <% end %>
@@ -49,12 +49,12 @@
   <%= f.text_field :title %>
  <h4>本文</h4>
    <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>　
+  <%= f.submit 'Create Book' %>
   <% end %>
-	
-  
-  
-  
+
+
+
+
 
   </body>
 </html>

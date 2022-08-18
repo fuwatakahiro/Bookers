@@ -20,11 +20,13 @@ class BooksController < ApplicationController
     @list = List.find(params[:id])
   end
   def update
-    list = List.find(params[:id])
-    # list.update(list_params)
-    if list.update(list_params)
+    @list = List.find(params[:id])
+    @list.update(list_params)
+    if @list.save
       flash[:update] = "Book was successfully updated."
-      redirect_to book_path(list.id)
+      redirect_to book_path(@list.id)
+    else
+      render "/books/edit.html.erb"
     end
   end
   def destroy
