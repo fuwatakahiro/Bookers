@@ -16,7 +16,7 @@
     <% end %>
   </ul>
 <% end %>
-  <%= form_with model: @list, url: update_book_path(@list), method: :patch do |f| %>
+  <%= form_with model: @list, url: book_path(@list), method: :patch do |f| %>
     <h4>title</h4>
     <%= f.text_field :title %>
     <h4>body</h4>
@@ -24,6 +24,7 @@
     <%= f.submit 'Update Book' %>
     <% end %>
     <%= link_to "show", book_path(@list) %>
-    <%= link_to "back", '/books/index'  %>
+    <!--ここを変えた-->
+    <%= link_to "back", '/books'  %>
   </body>
 </html>

@@ -10,11 +10,12 @@ class BooksController < ApplicationController
       flash[:success] = "Book was successfully created."
       redirect_to book_path(@list.id)
     else
-      render "/books/index"
+      # ここを変えた
+      render "/books/index.html.erb"
     end
   end
   def show
-    @list = List.find(params[:id])
+   @list = List.find(params[:id])
   end
   def edit
     @list = List.find(params[:id])
@@ -33,7 +34,7 @@ class BooksController < ApplicationController
     list = List.find(params[:id])
     if list.destroy
       flash[:success] = "Book was successfully destroyed."
-      redirect_to "/books/index"
+      redirect_to "/books"
     end
   end
    private
