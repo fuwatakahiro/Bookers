@@ -10,7 +10,6 @@ class BooksController < ApplicationController
       flash[:success] = "Book was successfully created."
       redirect_to book_path(@list.id)
     else
-      # ここを変えた
       render "/books/index.html.erb"
     end
   end
