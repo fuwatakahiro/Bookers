@@ -8,10 +8,10 @@
   </head>
   <body>
     <h2>title</h2>
-    <%= @list.title %>
+    <%= @book.title %>
     <h2>body</h2>
-    <%= @list.body %>
-    <%= link_to "edit", edit_book_path(@list.id) %>
+    <%= @book.body %>
+    <%= link_to "edit", edit_book_path(@book.id) %>
     <!--ここを変えた-->
     <%= link_to "back", "/books" %>
   </body>
